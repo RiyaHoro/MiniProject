@@ -1,0 +1,169 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("{% static 'DiabetesPrediction/Images/image1.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .main {
+        align: center;
+        position: fixed;
+        top: 140px;
+        left: 410px;
+        width: 550px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        align-items: center;
+        padding: 5%;
+        margin: -70px;
+      }
+      h1 {
+        color: #0086b3;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      td:first-child {
+        font-size: 18px; /* Increased font size */
+        font-weight: bold;
+        color: #333; /* Optional: Make text darker */
+      }
+      input[type="text"] {
+        border: 2px solid #333; /* Dark border */
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px; /* Slightly rounded edges */
+        outline: none; /* Removes blue outline on focus */
+      }
+
+      input[type="text"]:focus {
+        border-color: #0086b3; /* Change border color when focused */
+        box-shadow: 0 0 5px rgba(0, 134, 179, 0.5);
+      }
+
+      input[type="submit"] {
+        background-color: #4dc3ff;
+        border: 2px solid black;
+        color: white;
+        padding: 8px 16px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+    
+      input[type="reset"] {
+        background-color: #4dc3ff;
+        border: 2px solid black;
+        color: white;
+        padding: 8px 16px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center" class="main">
+      <h1>Please enter the following information:</h1>
+      <form action="result" method="GET">
+        <table>
+          <tr>
+            <td align="right">Pregnancies:</td>
+            <td align="left">
+              <input type="text" name="n1" value="{{ request.GET.n1 }}" />
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right">Glucose:</td>
+            <td align="left">
+              <input type="text" name="n2" value="{{ request.GET.n2 }}" />
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right">Blood Pressure:</td>
+            <td align="left">
+              <input type="text" name="n3" value="{{ request.GET.n3 }}" />
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right">Skin Thickness:</td>
+            <td align="left">
+              <input type="text" name="n4" value="{{ request.GET.n4 }}" />
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right">Insulin:</td>
+            <td align="left">
+              <input type="text" name="n5" value="{{ request.GET.n5 }}" />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">BMI:</td>
+            <td align="left">
+              <input type="text" name="n6" value="{{ request.GET.n6 }}" />
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right">Diabetes Pedigree function:</td>
+            <td align="left">
+              <input type="text" name="n7" value="{{ request.GET.n7 }}" />
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right">Age:</td>
+            <td align="left">
+              <input type="text" name="n8" value="{{ request.GET.n8 }}" />
+            </td>
+          </tr>
+        </table>
+
+        <!-- Submit and Reset Buttons -->
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" onclick="resetForm(event)">
+
+      </form>
+
+      <!-- JavaScript for Reset Functionality -->
+      <script>
+        function resetForm(event) {
+            event.preventDefault(); // Prevent default form reset behavior
+        
+            // Clear all input fields
+            let inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(input => input.value = "");
+        
+            // Clear the result text
+            let resultElement = document.getElementById("result");
+            if (resultElement) {
+                resultElement.innerText = "";
+            }
+        
+            // Remove query parameters from URL to clear retained Django values
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        
+      </script>
+
+      <p
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          color: #0086b3;
+          margin-top: 15px;
+        " id = "result"
+      >
+        Result: {{ result2 }}
+      </p>
+    </div>
+  </body>
+</html>
