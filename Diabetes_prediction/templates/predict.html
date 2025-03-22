@@ -12,59 +12,59 @@
         background-attachment: fixed;
         background-size: cover;
       }
+    
       .main {
-        align: center;
-        position: fixed;
-        top: 140px;
-        left: 410px;
-        width: 550px;
+        position: relative;
+        width: 90%; /* Take most of the screen width */
+        max-width: 550px; /* Limit max width for large screens */
         background-color: #ffffff;
         border-radius: 10px;
-        align-items: center;
         padding: 5%;
-        margin: -70px;
-      }
-      h1 {
-        color: #0086b3;
-        font-size: 30px;
-        font-weight: bold;
-      }
-      td:first-child {
-        font-size: 18px; /* Increased font size */
-        font-weight: bold;
-        color: #333; /* Optional: Make text darker */
-      }
-      input[type="text"] {
-        border: 2px solid #333; /* Dark border */
-        padding: 5px;
-        font-size: 16px;
-        border-radius: 5px; /* Slightly rounded edges */
-        outline: none; /* Removes blue outline on focus */
-      }
-
-      input[type="text"]:focus {
-        border-color: #0086b3; /* Change border color when focused */
-        box-shadow: 0 0 5px rgba(0, 134, 179, 0.5);
-      }
-
-      input[type="submit"] {
-        background-color: #4dc3ff;
-        border: 2px solid black;
-        color: white;
-        padding: 8px 16px;
-        cursor: pointer;
-        margin-top: 15px;
+        margin: 10% auto; /* Center it horizontally */
+        text-align: center;
       }
     
+      table {
+        width: 100%;
+      }
+    
+      td {
+        padding: 10px;
+      }
+    
+      input[type="text"] {
+        width: 100%; /* Full width for responsiveness */
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+    
+      input[type="submit"],
       input[type="reset"] {
-        background-color: #4dc3ff;
-        border: 2px solid black;
-        color: white;
-        padding: 8px 16px;
-        cursor: pointer;
-        margin-top: 15px;
+        width: 100%; /* Full-width buttons */
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+    
+      /* Make it more mobile-friendly */
+      @media (max-width: 600px) {
+        .main {
+          padding: 8%;
+          margin: 5% auto;
+        }
+    
+        h1 {
+          font-size: 24px;
+        }
+    
+        input[type="submit"],
+        input[type="reset"] {
+          font-size: 16px;
+        }
       }
     </style>
+    
   </head>
   <body>
     <div align="center" class="main">
