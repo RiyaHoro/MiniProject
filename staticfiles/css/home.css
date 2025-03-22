@@ -1,0 +1,30 @@
+div{
+    color:white;
+}
+h1{
+    color:#eceff3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: arial, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 200px;
+}
+h2{
+    color: 'white';
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 400px;
+}
+
+input[type=submit]{
+    background-color: #1a91e6;
+    font-size: medium;
+    transition: 0.3s;
+    border: 2px;
+    border-radius: 9px;
+    color: white;
+    padding: 16px 32px;
+    cursor: pointer;
+    margin-top: 15px;
+}
