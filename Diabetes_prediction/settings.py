@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ovmd1t4pkpwhz)v2b+6gb0rpfa!!9)*#zetlj@a%ip@5!m2ciw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Diabetes_prediction.onrender.com', '127.0.0.1']
+
 
 
 # Application definition
@@ -118,12 +119,15 @@ USE_TZ = True
 
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Diabetes_prediction", "static"),  # Update this path
+    os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
