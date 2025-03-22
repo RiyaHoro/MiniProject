@@ -12,7 +12,7 @@
         background-attachment: fixed;
         background-size: cover;
       }
-    
+
       .main {
         position: relative;
         width: 90%; /* Take most of the screen width */
@@ -23,22 +23,22 @@
         margin: 10% auto; /* Center it horizontally */
         text-align: center;
       }
-    
+
       table {
         width: 100%;
       }
-    
+
       td {
         padding: 10px;
       }
-    
+
       input[type="text"] {
         width: 100%; /* Full width for responsiveness */
         padding: 8px;
         font-size: 16px;
         border-radius: 5px;
       }
-    
+
       input[type="submit"],
       input[type="reset"] {
         width: 100%; /* Full-width buttons */
@@ -46,25 +46,26 @@
         margin-top: 10px;
         border-radius: 5px;
       }
-    
+
       /* Make it more mobile-friendly */
       @media (max-width: 600px) {
         .main {
           padding: 8%;
           margin: 5% auto;
         }
-    
+
         h1 {
           font-size: 24px;
         }
-    
+
         input[type="submit"],
         input[type="reset"] {
-          font-size: 16px;
+        font-size: 16px;
+        background-color: #003366;
+        transition: 0.3s;
         }
       }
     </style>
-    
   </head>
   <body>
     <div align="center" class="main">
@@ -129,29 +130,31 @@
 
         <!-- Submit and Reset Buttons -->
         <input type="submit" value="Submit" />
-        <input type="reset" value="Reset" onclick="resetForm(event)">
-
+        <input type="reset" value="Reset" onclick="resetForm(event)" />
       </form>
 
       <!-- JavaScript for Reset Functionality -->
       <script>
         function resetForm(event) {
-            event.preventDefault(); // Prevent default form reset behavior
-        
-            // Clear all input fields
-            let inputs = document.querySelectorAll('input[type="text"]');
-            inputs.forEach(input => input.value = "");
-        
-            // Clear the result text
-            let resultElement = document.getElementById("result");
-            if (resultElement) {
-                resultElement.innerText = "";
-            }
-        
-            // Remove query parameters from URL to clear retained Django values
-            window.history.replaceState({}, document.title, window.location.pathname);
+          event.preventDefault(); // Prevent default form reset behavior
+
+          // Clear all input fields
+          let inputs = document.querySelectorAll('input[type="text"]');
+          inputs.forEach((input) => (input.value = ""));
+
+          // Clear the result text
+          let resultElement = document.getElementById("result");
+          if (resultElement) {
+            resultElement.innerText = "";
+          }
+
+          // Remove query parameters from URL to clear retained Django values
+          window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+          );
         }
-        
       </script>
 
       <p
@@ -160,7 +163,8 @@
           font-weight: bold;
           color: #0086b3;
           margin-top: 15px;
-        " id = "result"
+        "
+        id="result"
       >
         Result: {{ result2 }}
       </p>
