@@ -70,7 +70,8 @@
   <body>
     <div align="center" class="main">
       <h1>Please enter the following information:</h1>
-      <form action="result" method="GET">
+      <form action="{% url 'result' %}" method="GET">
+
         <table>
           <tr>
             <td align="right">Pregnancies:</td>

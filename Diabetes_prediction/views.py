@@ -30,6 +30,9 @@ def home(request):
 def predict(request):
     return render(request, 'predict.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 
 def result(request):
     try:
