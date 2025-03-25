@@ -1,50 +1,103 @@
+/* Force background color on navbar */
+.navbar {
+    background-color: navy !important; /* Ensure navy blue color applies */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Brand logo and text */
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo size */
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Centering navbar links */
+.navbar-nav {
+    gap: 20px; /* Space between links */
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    color: lightgray !important;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+    border: none;
+}
+
+/* Navbar toggler icon */
+.navbar-toggler-icon {
+    background-color: white;
+    border-radius: 3px;
+}
 
 div{
     color:white;
 }
 h1{
     color:#eceff3;.navbar {
-        background-color: navy;
-        padding: 15px 0;
-    }
-    
-    .navbar-brand {
-        color: white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-    }
-    
-    .navbar-brand img {
-        height: 40px;
-        width: auto;
-        margin-right: 10px;
-    }
-    
-    .navbar-nav {
-        gap: 20px; /* Adds spacing between links */
-    }
-    
-    .navbar-nav .nav-link {
-        color: white !important;
-        font-size: 1.2rem;
-        transition: color 0.3s;
-    }
-    
-    .navbar-nav .nav-link:hover {
-        color: lightgray !important;
-    }
-    
-    .navbar-toggler {
-        border: none;
-    }
-    
-    .navbar-toggler-icon {
-        background-color: white;
-        border-radius: 3px;
-    }
-    
+    background-color: navy;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.navbar-nav {
+    gap: 20px; /* Adds spacing between links */
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: lightgray !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+    border-radius: 3px;
+}
+
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-family: arial, sans-serif;
     font-size: 60px;
