@@ -1,63 +1,6 @@
-/* Force background color on navbar */
+/* Navbar */
 .navbar {
-    background-color: navy !important; /* Ensure navy blue color applies */
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* Brand logo and text */
-.navbar-brand {
-    color: white !important;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-/* Logo size */
-.navbar-brand img {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-}
-
-/* Centering navbar links */
-.navbar-nav {
-    gap: 20px; /* Space between links */
-}
-
-/* Navbar links */
-.navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Hover effect */
-.navbar-nav .nav-link:hover {
-    color: lightgray !important;
-}
-
-/* Navbar toggler */
-.navbar-toggler {
-    border: none;
-}
-
-/* Navbar toggler icon */
-.navbar-toggler-icon {
-    background-color: white;
-    border-radius: 3px;
-}
-
-div{
-    color:white;
-}
-h1{
-    color:#eceff3;.navbar {
-    background-color: navy;
+    background-color: rgba(0, 0, 128, 0.9); /* Navy with slight transparency */
     padding: 15px 0;
 }
 
@@ -94,33 +37,38 @@ h1{
 }
 
 .navbar-toggler-icon {
-    background-color: white;
-    border-radius: 3px;
+    filter: invert(1); /* Makes the toggler white */
 }
 
+/* Welcome Text */
+.welcome-text {
+    text-align: center;
+    color: #eceff3;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: arial, sans-serif;
-    font-size: 60px;
+    font-family: Arial, sans-serif;
+    font-size: 45px;
     font-weight: bold;
-    margin-top: 200px;
-}
-h2{
-    color: 'white';
-    font-family: arial, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 400px;
+    margin-top: 100px;
 }
 
-input[type=submit]{
+/* Form Styling */
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+}
 
+input[type=submit] {
     background-color: #1a91e6;
     font-size: medium;
     transition: 0.3s;
-    border: 2px;
+    border: none;
     border-radius: 9px;
     color: white;
     padding: 16px 32px;
     cursor: pointer;
     margin-top: 15px;
+}
+
+input[type=submit]:hover {
+    background-color: #0f72c6;
 }

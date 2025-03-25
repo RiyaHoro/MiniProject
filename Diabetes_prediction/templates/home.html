@@ -1,29 +1,110 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
     <style>
-      body {
-        background-image: url("{% static 'Images/image.jpg' %}");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-    }
-    </style>
-  </head>
-  <body>
-    <section>
-      <header>
-        {% load static %}
+        /* Background Image */
+        body {
+            background-image: url("{% static 'images/image.jpg' %}"); /* Ensure folder name is correct */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
+        /* Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 128, 0.9); /* Slightly transparent navy */
+            width: 100%;
+            height: 70px;
+        }
+  
+        /* Navbar Brand (Logo + Text) */
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        /* Navbar Links */
+        .navbar-nav {
+            gap: 20px;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: lightgray !important;
+        }
+
+        /* Navbar Toggler */
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* Welcome Text */
+        .welcome-text {
+            text-align: center;
+            color: #eceff3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            margin-top: 100px;
+        }
+
+        /* Form Container */
+        .form-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type=submit] {
+            background-color: #1a91e6;
+            font-size: medium;
+            transition: 0.3s;
+            border: none;
+            border-radius: 9px;
+            color: white;
+            padding: 16px 32px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #0f72c6;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -32,29 +113,32 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'predict' %}">Predict</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
                     </ul>
+                  
                 </div>
             </div>
         </nav>
-        
-      </header>
-    </section>
-    <div align="center">
-      <h1>Welcome to Diabetes Prediction System</h1>
+    </header>
 
-      <div class="form-container">
-          <form action="predict">
-              <input type="submit" value="Let's Get Started">
-          </form>
-      </div>
+    <!-- Welcome Section -->
+    <div class="welcome-text">
+        <h1>Welcome to Diabetes Prediction System</h1>
     </div>
-<!-- Bootstrap JavaScript (including Popper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
 
-  </body>
+    <div class="form-container">
+        <form action="predict">
+            <input type="submit" value="Let's Get Started">
+        </form>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
