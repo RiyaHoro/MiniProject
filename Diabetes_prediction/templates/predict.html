@@ -4,72 +4,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        background-image: url("{% static 'Images/image1.jpg' %}");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-      }
+    <title>Prediction Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/predict.css' %}">
 
-      .main {
-        position: relative;
-        width: 90%; /* Take most of the screen width */
-        max-width: 550px; /* Limit max width for large screens */
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 5%;
-        margin: 10% auto; /* Center it horizontally */
-        text-align: center;
-      }
-
-      table {
-        width: 100%;
-      }
-
-      td {
-        padding: 10px;
-      }
-
-      input[type="text"] {
-        width: 100%; /* Full width for responsiveness */
-        padding: 8px;
-        font-size: 16px;
-        border-radius: 5px;
-      }
-
-      input[type="submit"],
-      input[type="reset"] {
-        width: 80%; /* Full-width buttons */
-        padding: 10px;
-        margin-top: 10px;
-        border-radius: 5px;
-        background-color: blue;
-        font-size: 1.4 em;
-      }
-
-      /* Make it more mobile-friendly */
-      @media (max-width: 600px) {
-        .main {
-          padding: 8%;
-          margin: 5% auto;
-        }
-
-        h1 {
-          font-size: 24px;
-        }
-
-        input[type="submit"],
-        input[type="reset"] {
-        font-size: 16px;
-        color: white;
-        background-color:rgb(80, 223, 239);
-        transition: 0.3s;
-        border : 2px;
-        }
-      }
-    </style>
   </head>
   <body>
     <div align="center" class="main">

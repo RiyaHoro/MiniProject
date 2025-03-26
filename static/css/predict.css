@@ -1,0 +1,66 @@
+body {
+    background: radial-gradient(circle, rgb(237, 237, 237), rgb(215, 139, 250))
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; */
+  }
+
+  .main {
+    position: relative;
+    width: 90%; /* Take most of the screen width */
+    max-width: 550px; /* Limit max width for large screens */
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5%;
+    margin: 10% auto; /* Center it horizontally */
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    padding: 10px;
+  }
+
+  input[type="text"] {
+    width: 100%; /* Full width for responsiveness */
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    width: 80%; /* Full-width buttons */
+    border: 2px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #a27af3;
+    font-size: 1rem;
+    color: rgb(249, 247, 247);
+    font-weight: bold;
+  }
+
+  /* Make it more mobile-friendly */
+  @media (max-width: 600px) {
+    .main {
+      padding: 8%;
+      margin: 5% auto;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+    font-size: 16px;
+    color: white;
+    background-color:rgb(80, 223, 239);
+    transition: 0.3s;
+    border : 2px;
+    }
+  }
