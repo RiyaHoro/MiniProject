@@ -1,45 +1,4 @@
-/* Navbar */
-.navbar {
-    background-color: rgba(0, 0, 128, 0.9); /* Navy with slight transparency */
-    padding: 15px 0;
-}
-
-.navbar-brand {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.navbar-brand img {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-}
-
-.navbar-nav {
-    gap: 20px; /* Adds spacing between links */
-}
-
-.navbar-nav .nav-link {
-    color: white !important;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: lightgray !important;
-}
-
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler-icon {
-    filter: invert(1); /* Makes the toggler white */
-}
-
+ 
 /* Welcome Text */
 .welcome-text {
     text-align: center;

@@ -1,144 +1,127 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
     <style>
-        /* Background Image */
-        body {
-            background-image: url("{% static 'images/image.jpg' %}"); /* Ensure folder name is correct */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
+      /* Background Image */
+      body {
+        background-image: url("{% static 'images/image.jpg' %}"); /* Ensure folder name is correct */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      /* Custom Navbar Background */
+      .navbar {
+        background-color: #7334F1 !important; /* Replace this with your desired color */
+      }
+      
+      /* Navbar link styling */
+      .nav-link {
+        font-size: 1.2rem !important; /* Medium size */
+        color: white !important; /* White text */
+        margin-right: 20px; /* Space between links */
+        transition: color 0.3s ease-in-out;
+      }
+      
+      .nav-link:hover {
+        color: #1a91e6 !important; /* Blue hover */
+      }
+      
+      /* Center the navbar content */
+      .navbar-collapse {
+        justify-content: center;
+      }
 
-        /* Navbar */
-        .navbar {
-            background-color: rgba(0, 0, 128, 0.9); /* Slightly transparent navy */
-            width: 100%;
-            height: 70px;
-        }
-  
-        /* Navbar Brand (Logo + Text) */
-        .navbar-brand {
-            color: white !important;
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
+      /* Logo styling */
+      .navbar-brand img {
+        height: 45px;
+        width: auto;
+        margin-right: 60px;
+      }
 
-        .navbar-brand img {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-        }
+      input[type="submit"] {
+        background-color: #1a91e6;
+        font-size: medium;
+        transition: 0.3s;
+        border: none;
+        border-radius: 9px;
+        color: white;
+        padding: 16px 32px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
 
-        /* Navbar Links */
-        .navbar-nav {
-            gap: 20px;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: lightgray !important;
-        }
-
-        /* Navbar Toggler */
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
-
-        /* Welcome Text */
-        .welcome-text {
-            text-align: center;
-            color: #eceff3;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-family: Arial, sans-serif;
-            font-size: 45px;
-            font-weight: bold;
-            margin-top: 100px;
-        }
-
-        /* Form Container */
-        .form-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        input[type=submit] {
-            background-color: #1a91e6;
-            font-size: medium;
-            transition: 0.3s;
-            border: none;
-            border-radius: 9px;
-            color: white;
-            padding: 16px 32px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        input[type=submit]:hover {
-            background-color: #0f72c6;
-        }
-
+      input[type="submit"]:hover {
+        background-color: #0f72c6;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="{% static 'images/diabetes_logo.png' %}" alt="Logo"> Diabetes Prediction
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-          
-                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'predict' %}">Predict</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                    </ul>
-                  
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'images/diabetes_logo.jpg' %}" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <!-- Centers the links -->
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'predict' %}">Predict</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Insignts</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <!-- Welcome Section -->
     <div class="welcome-text">
-        <h1>Welcome to Diabetes Prediction System</h1>
+      <h1>Welcome to Diabetes Prediction System</h1>
     </div>
 
     <div class="form-container">
-        <form action="predict">
-            <input type="submit" value="Let's Get Started">
-        </form>
+      <form action="predict">
+        <input type="submit" value="Let's Get Started" />
+      </form>
     </div>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    <!-- jQuery and Bootstrap JS (Place before closing body tag) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
