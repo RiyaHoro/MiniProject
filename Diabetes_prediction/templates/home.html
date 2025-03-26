@@ -18,19 +18,23 @@
     <style>
       /* Background Image */
       body {
-        background-image: url("{% static 'images/image.jpg' %}"); /* Ensure folder name is correct */
+        {% comment %} background-image: url("{% static 'images/backg1p.jpg' %}"); /* Ensure folder name is correct */
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: cover;
+        background-size: cover; {% endcomment %}
+        
       }
       /* Custom Navbar Background */
       .navbar {
-        background-color: #7334F1 !important; /* Replace this with your desired color */
+        background-color: #a27af3 !important; /* Replace this with your desired color */
+        position: fixed;
+        width: 100%;
       }
       
       /* Navbar link styling */
       .nav-link {
-        font-size: 1.2rem !important; /* Medium size */
+        font-size: 1.4rem !important;
+        font-weight: bold; /* Medium size */
         color: white !important; /* White text */
         margin-right: 20px; /* Space between links */
         transition: color 0.3s ease-in-out;
@@ -67,6 +71,7 @@
       input[type="submit"]:hover {
         background-color: #0f72c6;
       }
+    
     </style>
   </head>
   <body>
@@ -96,22 +101,22 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'predict' %}">Predict</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Insignts</a>
+                <a class="nav-link" href="#insights" >Insights</a>
               </li>
           </ul>
         </div>
       </nav>
     </header>
-
+  <section class="Welcome_section">
     <!-- Welcome Section -->
     <div class="welcome-text">
-      <h1>Welcome to Diabetes Prediction System</h1>
+      <h1><b>Welcome <br> to<br> Diabetes Prediction System</b></h1>
     </div>
 
     <div class="form-container">
@@ -119,6 +124,69 @@
         <input type="submit" value="Let's Get Started" />
       </form>
     </div>
+  </section>
+ <!--About section-->
+  <section class="about" id="about">
+    <div class="about-container">
+        <div class="about-image">
+            <img src={% static 'Images/diabetes_illustration.jpg' %} alt="Diabetes Illustration">
+        </div>
+        <div class="about-content">
+            <h2>Accurate Diabetes Prediction Here</h2>
+            <p>
+                Our AI-powered system helps you predict diabetes risks with high accuracy. 
+                Using advanced machine learning models, we analyze your health data to provide 
+                real-time predictions and actionable insights.
+            </p>
+          
+        </div>
+    </div>
+</section>
+<!--Insights secion-->
+<section id="insights">
+
+  <h2>Diabetes Prediction Insights</h2>
+
+  <div class="insights-container">
+      <!-- Key Metrics -->
+          <div class="metric-box">
+              <h3>📊 Model Accuracy</h3>
+              <p>92%</p>
+          </div>
+          <div class="metric-box">
+              <h3>⚠️ High-Risk Cases</h3>
+              <p>30%</p>
+          </div>
+      </div>
+
+      <!-- Data Visualization Placeholder -->
+      <div class="chart-container">
+          <h3>📈 Diabetes Risk Trends</h3>
+          <img src="chart-placeholder.png" alt="Graph" class="chart">
+      </div>
+
+      <!-- Health Insights -->
+      <div class="health-insights">
+          <h3>💡 Health Insights & Recommendations</h3>
+          <p>🔹 Maintain a balanced diet with low sugar intake.</p>
+          <p>🔹 Regular exercise helps in reducing diabetes risk.</p>
+          <p>🔹 Monitor glucose levels regularly for early detection.</p>
+      </div>
+      <div class="chart-container">
+        <h3>🥗 Recommended Diet for Diabetes</h3>
+        <p>To maintain healthy blood sugar levels, eat:</p>
+        <ul>
+            <li>✅ Leafy Greens & Vegetables</li>
+            <li>✅ Whole Grains (Quinoa, Brown Rice)</li>
+            <li>✅ Lean Proteins (Fish, Chicken, Tofu)</li>
+            <li>✅ Nuts & Seeds (Almonds, Chia Seeds)</li>
+            <li>❌ Avoid Sugary Drinks & Processed Foods</li>
+        </ul>
+    </div>
+  </div>
+
+</section>
+
 
     <!-- jQuery and Bootstrap JS (Place before closing body tag) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -1,13 +1,35 @@
- 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ body{
+    background: radial-gradient(circle, rgb(237, 237, 237), rgb(215, 139, 250))
+ }
 /* Welcome Text */
-.welcome-text {
+.Welcome_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    color: #eceff3;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: Arial, sans-serif;
-    font-size: 45px;
+    color: white;
+}
+
+
+.welcome-text {
+    background: linear-gradient(to right, #0d09f7, #06356e, #7d08e3, #8b028b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 0vh;
+    
+}
+.welcome-text h1{
+    font-size: 4rem;
     font-weight: bold;
-    margin-top: 100px;
 }
 
 /* Form Styling */
@@ -30,4 +52,178 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #0f72c6;
+}
+
+.about {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+    background-color: #f8f9fa;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 350px;
+    height: auto;
+}
+
+.about-content {
+    max-width: 500px;
+    margin-left: 30px;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #111;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.about-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.read-more {
+    background-color: #ff4d4d;
+    color: white;
+    margin-right: 10px;
+}
+
+.read-more:hover {
+    background-color: #e63946;
+}
+
+.check-now {
+    background-color: #111;
+    color: white;
+}
+
+.check-now:hover {
+    background-color: #333;
+}
+/*for insights section*/
+#insights {
+    min-height: 100vh;
+    padding: 50px 20px;
+    text-align: center;
+    background: radial-gradient(circle, rgb(237, 237, 237), rgb(215, 139, 250))
+}
+
+h2 {
+    font-size: 3rem;
+    color: #070707;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.insights-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.metric-box {
+    background: linear-gradient(to right, #ff4d4d, #ff9900);
+    color: white;
+    margin: 23px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.metric-box h3 {
+    font-size: 22px;
+}
+
+.metric-box p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Chart Section */
+.chart-container {
+    background: #fff;
+    margin: auto;
+    margin-top: 0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Health Insights */
+.health-insights {
+    background: #f8f9fa;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.health-insights h3 {
+    font-size: 20px;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.health-insights p {
+    font-size: 16px;
+    color: #444;
+    margin: 5px 0;
 }
