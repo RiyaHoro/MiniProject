@@ -31,6 +31,17 @@ html, body {
     font-size: 4rem;
     font-weight: bold;
 }
+@media (max-width: 768px) {
+    .welcome-text h1 {
+        font-size: 2.5rem;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
 
 /* Form Styling */
 .form-container {
@@ -99,9 +110,25 @@ input[type=submit]:hover {
     margin: 15px 0;
 }
 
-.about-buttons {
-    margin-top: 20px;
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .about-content {
+        margin-left: 0;
+    }
 }
+
+
 
 .btn {
     display: inline-block;
@@ -229,3 +256,18 @@ h2 {
     color: #444;
     margin: 5px 0;
 }
+@media (max-width: 768px) {
+    .insights-container {
+        flex-direction: column;
+    }
+
+    .metric-box {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+}
+

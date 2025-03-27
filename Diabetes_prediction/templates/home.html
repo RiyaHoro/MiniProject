@@ -26,9 +26,12 @@
       }
       /* Custom Navbar Background */
       .navbar {
+        display: flex;
+        flex-wrap:wrap;
         background-color: #a27af3 !important; /* Replace this with your desired color */
         position: fixed;
         width: 100%;
+        padding: 10px 20px;
       }
       
       /* Navbar link styling */
@@ -43,6 +46,15 @@
       .nav-link:hover {
         color: #1a91e6 !important; /* Blue hover */
       }
+      .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav-item {
+        padding: 5px 10px;
+    }
+    
       
       /* Center the navbar content */
       .navbar-collapse {
