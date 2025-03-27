@@ -4,41 +4,108 @@ html, body {
     padding: 0;
 }
 
- body{
+body{
     background: radial-gradient(circle, rgb(237, 237, 237), rgb(215, 139, 250))
  }
-/* Welcome Text */
+/* Welcome Section */
 .Welcome_section {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Center content */
     align-items: center;
     height: 100vh;
-    text-align: center;
+    text-align: left; /* Change this from 'center' to 'left' */
     color: white;
+    padding: 20px; /* Add padding for spacing */
+    margin-left: 40px;
 }
-
-
 .welcome-text {
-    background: linear-gradient(to right, #0d09f7, #06356e, #7d08e3, #8b028b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin-top: 0vh;
-    
+    display: flex;
+    flex-direction: row; /* Keep it side by side */
+    align-items: center;
+    justify-content: space-between; /* Space evenly */
+    width: 80%;
+    max-width: 1200px; /* Prevent full-width stretching */
+    gap: 40px; /* Space between welcome and about */
 }
-.welcome-text h1{
-    font-size: 4rem;
+
+
+.welcome {
+    display: flex;
+    flex-direction: column; /* Stack heading & button */
+    align-items: flex-start; /* Align content to the left */
+    gap: 20px; /* Space between elements */
+    max-width: 50%; /* Take half of the section */
+}
+
+/* Styling for the Welcome section */
+.welcome h1 {
+    font-size: 3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    margin-top:70px;/* Align everything left */
+    font-weight: bolder;
+}
+
+
+/* Center the "to" text */
+.center-text {
+    text-align: center; /* Center align only "to" */
+    /* Ensures full-width alignment */
+}
+.form-container {
+    width: 100%; /* Ensure the form doesn't shrink */
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: -15px;/* Align button to left */
+}
+.app-about {
+    max-width: 70%;
+    padding: 0 15px;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    margin-top: 70px;
+    margin-left: 43px;
     font-weight: bold;
 }
+
+
+/* For mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
-    .welcome-text h1 {
-        font-size: 2.5rem;
+    .Welcome_section {
+        height: auto; /* Allow content to adjust height */
+        padding: 40px 20px; /* Add padding for better spacing */
     }
 
-    input[type=submit] {
-        width: 100%;
-        padding: 12px;
+    .welcome-text {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+    }
+
+    .welcome h1 {
+        font-size: 2.5rem;  /* Adjust font size */
+        text-align: center; /* Ensure centering */
+        line-height: 1.2;   /* Improve spacing */
+        display: block;     /* Ensure it's visible */
+        margin-bottom: 10px; /* Space before button */
+    }
+    
+    .form-container{
+        margin-top: -15px;
+    }
+    .form-container input {
+        font-size: 1rem;
+        padding: 10px 20px;
+        
+    }
+
+    .app-about {
+        max-width: 100%;
+        padding: 0 15px;
     }
 }
 
@@ -216,19 +283,30 @@ h2 {
     margin-top: 10px;
 }
 
-/* Chart Section */
 .chart-container {
     background: #fff;
     margin: auto;
     margin-top: 0;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 60%; /* Reduce width */
+    height: auto; /* Auto height for responsiveness */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.chart-container img {
+    width: 80%; /* Reduce image width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: auto;
+}
+
+.chart-container ul{
+    list-style-type: none;
+}
+
 .chart {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 5px;
 }
@@ -241,7 +319,7 @@ h2 {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 60%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

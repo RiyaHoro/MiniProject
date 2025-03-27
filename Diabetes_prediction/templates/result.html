@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}" />
+  </head>
+  <body>
+    <div align="center" class="main">
+      <h1>Result</h1>
+      <p
+        style="font-size: 24px; font-weight: bold; color: {% if result2 == 'Positive' %}red{% else %}green{% endif %}"
+      >
+        Prediction: {{ result2 }}
+      </p>
+      <p>
+        <strong>Probability of Diabetes:</strong> {{ probability|floatformat:2}}
+      </p>
+
+      <!-- Graphs Section -->
+      <!-- Graphs Section -->
+      <canvas id="predictionChart" width="300" height="150"></canvas>
+      <canvas id="inputGraph" width="300" height="150"></canvas>
+
+      <br />
+      <a href="{% url 'predict' %}">
+        <button>Go Back</button>
+      </a>
+    </div>
+
+    <!-- JavaScript for Graphs -->
+    <script>
+      // Diabetes Probability Chart
+      let probability = parseFloat("{{ probability }}");
+      let ctx = document.getElementById("predictionChart").getContext("2d");
+      new Chart(ctx, {
+          type: "pie",
+          data: {
+              labels: ["Diabetes Risk", "Healthy"],
+              datasets: [{
+                  data: [probability * 100, (1 - probability) * 100],
+                  backgroundColor: ["red", "green"]
+              }]
+          },
+          options: { responsive: true }
+      });
+
+      // User Input Bar Chart
+      let inputData = {{ input_data|safe }};
+      let featureNames = {{ feature_names|safe }};
+      let ctx2 = document.getElementById("inputGraph").getContext("2d");
+      new Chart(ctx2, {
+          type: "bar",
+          data: {
+              labels: featureNames,
+              datasets: [{
+                  label: "User Input",
+                  data: inputData,
+                  backgroundColor: "blue"
+              }]
+          },
+          options: { responsive: true }
+      });
+    </script>
+  </body>
+</html>

@@ -22,10 +22,8 @@ model.fit(X_train, Y_train)
 # ✅ Define feature names to avoid `UserWarning`
 FEATURE_NAMES = X.columns.tolist()
 
-
 def home(request):
     return render(request, 'home.html')
-
 
 def predict(request):
     return render(request, 'predict.html')
@@ -33,10 +31,9 @@ def predict(request):
 def about(request):
     return render(request, 'about.html')
 
-
 def result(request):
     try:
-        # ✅ Safely get input values (avoids KeyError)
+        # ✅ Get user input safely
         val1 = float(request.GET.get('n1', 0))
         val2 = float(request.GET.get('n2', 0))
         val3 = float(request.GET.get('n3', 0))
@@ -46,14 +43,24 @@ def result(request):
         val7 = float(request.GET.get('n7', 0))
         val8 = float(request.GET.get('n8', 0))
 
-        # ✅ Convert input to DataFrame with correct column names
+        # ✅ Convert input to DataFrame
         input_data = pd.DataFrame([[val1, val2, val3, val4, val5, val6, val7, val8]], columns=FEATURE_NAMES)
 
         # ✅ Make prediction
         pred = model.predict(input_data)
+        probability = model.predict_proba(input_data)[0][1]  # Probability of having diabetes
+
         result2 = "Positive" if pred[0] == 1 else "Negative"
 
-    except Exception as e:
-        result2 = f"Error: {str(e)}"
+        # ✅ Pass data to the result page
+        context = {
+            "result2": result2,
+            "probability": probability,
+            "input_data": input_data.values.tolist()[0],  # Convert to list for template
+            "feature_names": FEATURE_NAMES
+        }
 
-    return render(request, 'predict.html', {"result2": result2})
+    except Exception as e:
+        context = {"result2": f"Error: {str(e)}"}
+
+    return render(request, 'result.html',context)

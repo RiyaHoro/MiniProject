@@ -128,14 +128,35 @@
   <section class="Welcome_section">
     <!-- Welcome Section -->
     <div class="welcome-text">
-      <h1><b>Welcome <br> to<br> Diabetes Prediction System</b></h1>
+         <div class="welcome">
+          <h1>
+            <b>Welcome <br><span class="center-text">to</span><br>Diabeto</b>
+        </h1>
+        
+              <div class="form-container">
+                <form action="predict">
+                  <input type="submit" value="Let's Get Started" />
+                </form>
+              </div>
+         </div>
+        <div class="app-about">
+            <p>Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor sit
+               amet consectetur adipisicing elit. Veritatis quam error debitis 
+               fugiat nam? Pariatur soluta, in cum quibusdam aperiam expedita 
+               eveniet? Autem culpa, vitae optio consectetur placeat omnis 
+               minima iure, ipsum officia cum eveniet nihil expedita ut neque 
+               ipsa. Eos deserunt blanditiis ea vitae saepe nobis ipsam 
+               architecto iste quidem ex omnis porro in est, nisi expedita.
+                Cumque doloremque sunt molestiae possimus quasi, nulla reprehenderit
+                 suscipit. Hic reiciendis quis asperiores sed voluptatibus 
+                 adipisci harum, iste, sequi molestiae sunt delectus doloremque
+                  quisquam, eius laborum earum! Fugit cum officia tempora expedita 
+                  quo, nemo exercitationem commodi dolores consectetur sed
+                   voluptatem.adipisicing elit. Exercitationem nam sapiente iure?</p>
+        </div>
     </div>
 
-    <div class="form-container">
-      <form action="predict">
-        <input type="submit" value="Let's Get Started" />
-      </form>
-    </div>
+    
   </section>
  <!--About section-->
   <section class="about" id="about">
@@ -176,7 +197,7 @@
       <!-- Data Visualization Placeholder -->
       <div class="chart-container">
           <h3>📈 Diabetes Risk Trends</h3>
-          <img src="chart-placeholder.png" alt="Graph" class="chart">
+          <img src="{%static 'Images/diabetes_risk_trends_styled.png' %}" alt="Graph" class="chart">
       </div>
 
       <!-- Health Insights -->
